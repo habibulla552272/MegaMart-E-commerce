@@ -1,6 +1,7 @@
-import Banner from "@/components/Banner/Banner";
+
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
+import SmartPhone from "@/components/smartPhone/SmartPhone";
 
 
 export default function Home() {
@@ -8,7 +9,8 @@ export default function Home() {
     <>
        <Header />
         <Navbar />
-        <Banner />
+        <SmartPhone />
+        
     </>
   );
 }
