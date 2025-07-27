@@ -9,23 +9,23 @@ import logo from "@/assets/MegaMart.png"
 import { FaShoppingCart } from "react-icons/fa";
 
 const NavbarLeft = () => {
-    const [LeftMenu,setLeftMenu]=useState(false)
+    const [LeftMenu, setLeftMenu] = useState(false)
 
     return (
         <>
             <section>
                 <div className='container mx-auto'>
                     <div className='flex gap-3 items-center py-5'>
-                        <h2 onClick={()=> setLeftMenu(!LeftMenu)} className='bg-green-300 w-8 h-8 flex items-center justify-center text-2xl'>
+                        <h2 onClick={() => setLeftMenu(!LeftMenu)} className='bg-green-300 w-8 h-8 flex items-center justify-center text-2xl'>
                             <HiMenuAlt2 />
                         </h2>
                         <p className=''>
                             <Image src={logo} alt='logo' />
                         </p>
                     </div>
-                    <div className={`absolute h-[100%] bg-black text-white w-[45%] md:w-[20%]  top-0 ${LeftMenu ? 'left-0 top-0 ease-in-out duration-700': '-left-80  ease-in-out duration-700'}`}>
+                    <div className={`absolute h-[100%] bg-black text-white w-[45%] md:w-[20%]  top-0 ${LeftMenu ? 'left-0 top-0 ease-in-out duration-700' : '-left-80  ease-in-out duration-700'}`}>
                         <div className=''>
-                            <h2 onClick={()=> setLeftMenu(!LeftMenu)} className='text-3xl flex justify-end  pr-6 pt-5  '><IoMdClose /></h2>
+                            <h2 onClick={() => setLeftMenu(!LeftMenu)} className='text-3xl flex justify-end  pr-6 pt-5  '><IoMdClose /></h2>
                             <div className='text-center'>
                                 <ul className="flex flex-col gap-8 px-8 pt-5">
                                     <li className=' hover:text-green-400'>
@@ -34,13 +34,13 @@ const NavbarLeft = () => {
                                     </li>
                                     <li>
 
-                                        <a href="#">About</a>
+                                        <a href="/about">About</a>
                                     </li>
                                     <li>
-                                        <a href="#">Services</a>
+                                        <a href="/services">Services</a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="/contact">
                                             Contact
                                         </a>
                                     </li>

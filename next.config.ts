@@ -3,11 +3,16 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    remotePatterns: [
-      
+   remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'fakestoreapi.in'
+        hostname: 'fakestoreapi.in', 
+        pathname: '/**'             
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.dummyjson.com',
+        pathname: '/**'
       }
     ]
   }
