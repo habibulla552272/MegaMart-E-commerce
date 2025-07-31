@@ -7,7 +7,7 @@ export const TopCategoriData=()=>{
         queryKey:['produc'],
         queryFn: dummyData,
     })
-    console.log(data);
+ 
     
     const beautidata= data?.filter((item)=> item.category== 'beauty') || [];
     const [perPage,setPerpage]=useState(4);

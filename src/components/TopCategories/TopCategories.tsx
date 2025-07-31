@@ -4,6 +4,7 @@ import React from 'react';
 import { TopCategoriData } from './TopCategoriPagination';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import { toast, ToastContainer } from 'react-toastify';
 
 const TopCategories: React.FC = () => {
   const {
@@ -24,12 +25,18 @@ const TopCategories: React.FC = () => {
     return <h2>Something went wrong</h2>;
   }
 
+  const addToCardHadeler = () => {
+    toast('added Successfully', {
+      position: "top-center",
+    })
+  }
+
   return (
     <section>
       <div className="container mx-auto">
         <h2 className="text-xl font-bold mb-4">Beauty Products</h2>
 
-       
+
         <div className="flex justify-center mt-4 gap-3">
           <button
             onClick={goToPrev}
@@ -65,9 +72,10 @@ const TopCategories: React.FC = () => {
                   height={250}
                   className="w-full h-[250px] object-cover"
                 />
-                 <div className="flex justify-center">
+                <div className="flex justify-center">
 
-                <Button className=" absolute w-34 bg-green-300 py-2 rounded-2xl text-white  -bottom-24 group-hover:bottom-4 ease-in-out duration-700 ">Add to Card</Button>
+                  <Button onClick={() => addToCardHadeler()} className=" absolute w-34 bg-green-300 py-2 rounded-2xl text-white  -bottom-24 group-hover:bottom-4 ease-in-out duration-700 ">Add to Card</Button>
+                  <ToastContainer autoClose={1000} />
                 </div>
               </div>
               <div className="pt-4">
@@ -82,7 +90,7 @@ const TopCategories: React.FC = () => {
                     ${(item.price - item.discount).toFixed(2)}
                   </span>
                 </p>
-               
+
               </div>
             </li>
           ))}

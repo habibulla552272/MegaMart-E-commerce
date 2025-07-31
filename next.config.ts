@@ -1,21 +1,20 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
   images: {
-   remotePatterns: [
-      {
+    remotePatterns: [
+       {
         protocol: 'https',
-        hostname: 'fakestoreapi.in', 
-        pathname: '/**'             
+        hostname: 'storage.googleapis.com', // for fakestoreapi.in
       },
       {
         protocol: 'https',
-        hostname: 'cdn.dummyjson.com',
-        pathname: '/**'
-      }
-    ]
-  }
+        hostname: 'i.dummyjson.com', // for dummyjson.com (older domain)
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.dummyjson.com', // ✅ NEW - for latest dummyjson images
+      },
+    ],
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
